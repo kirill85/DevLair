@@ -2,4 +2,5 @@
 /DevLair/DevLair/obj
 /DevLair/DevLair.Tests/obj
 /DevLair/DevLair.Tests/bin
-*suo
+*.suo
+*.vs10x
