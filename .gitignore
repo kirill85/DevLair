@@ -4,3 +4,7 @@
 /DevLair/DevLair.Tests/bin
 *.suo
 *.vs10x
+/DevLair/DevLair.ORM/bin
+/DevLair/DevLair.ORM/obj
+/DevLair/TestResults
+/DevLair/DevLair/App_Data

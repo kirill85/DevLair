@@ -61,9 +61,6 @@
     <Compile Include="Controllers\AccountControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DevLair\DevLair.csproj">
       <Project>{0F2A953F-3989-4767-917F-C4C9A66990E6}</Project>
       <Name>DevLair</Name>
