@@ -19,8 +19,8 @@ namespace DevLair.Crypto
         public bool SetCrypter(string crpyterparam = "64bit")
         {
             Tuple<Crypter,bool> match = crpyterparam.Match()
-                .With(s => "64bit"  == s, (string s) => Tuple.Create(new AES(), true))
-                .With(s => "AES"    == s, (string s) => Tuple.Create(new _64bit(), true))
+                .With(s => "64bit" == s, (string s) => Tuple.Create(new _64bit(), true))
+                .With(s => "AES"   == s, (string s) => Tuple.Create(new AES(), true))
                 .Default(f => Tuple.Create(new _64bit(), false)) 
                 .Return<Tuple<Crypter,bool>>();
 
