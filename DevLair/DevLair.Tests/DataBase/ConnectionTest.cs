@@ -15,9 +15,6 @@ namespace DevLair.Tests.DataBase
         {
             Encrypter encrypter = new Encrypter("64bit");
 
-            // Check if crypter name is "64 bit Encryption"
-            Assert.AreEqual("64 bit Encryption", encrypter.GetCrypter());
-
             String keyword = encrypter.Decrypt("QnV0IHlvdSBkb24ndCByZWFsbHkgbWVhbiBpdA==");
 
             // Check if crypter is changed
