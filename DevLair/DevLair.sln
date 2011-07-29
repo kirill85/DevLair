@@ -4,10 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevLair", "DevLair\DevLair.csproj", "{0F2A953F-3989-4767-917F-C4C9A66990E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevLair.Tests", "DevLair.Tests\DevLair.Tests.csproj", "{45CD4AA0-453D-4941-B9E0-220FF9202E32}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9B45F3AA-7875-444E-B9EB-D1934F9A5777} = {9B45F3AA-7875-444E-B9EB-D1934F9A5777}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevLair.ORM", "DevLair.ORM\DevLair.ORM.csproj", "{FAF231EA-2C47-484C-9099-9327F46A2B09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevLair.Crypto", "DevLair.Crypto\DevLair.Crypto.csproj", "{9B45F3AA-7875-444E-B9EB-D1934F9A5777}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nCrypto", "..\..\nCrypto\nCrypto.csproj", "{9B45F3AA-7875-444E-B9EB-D1934F9A5777}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

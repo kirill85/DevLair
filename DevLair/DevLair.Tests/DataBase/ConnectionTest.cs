@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.Data;
 using Npgsql;
-using DevLair.Crypto;
+using nCrypto;
 
 namespace DevLair.Tests.DataBase
 {
