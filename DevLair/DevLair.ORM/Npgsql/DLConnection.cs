@@ -10,7 +10,7 @@ namespace DevLair.ORM.Npgsql
 {
     static class DLConnection
     {
-        NpgsqlConnection conn = (new XConnection()).Connection;
+        public static NpgsqlConnection conn = (new XConnection()).Connection;
     }
     class XConnectionException : Exception
     {

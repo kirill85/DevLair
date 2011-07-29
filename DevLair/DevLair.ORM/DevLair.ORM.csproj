@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Model\Tables\Users.cs" />
     <Compile Include="Npgsql\DLConnection.cs" />
+    <Compile Include="Npgsql\DLExecute.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
