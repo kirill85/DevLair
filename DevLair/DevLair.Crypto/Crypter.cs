@@ -7,6 +7,16 @@ namespace DevLair.Crypto
 {
     abstract class Crypter
     {
+        protected string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
         public abstract string Encrypt(string str, string args);
         public abstract string Decrypt(string str, string args);
     }

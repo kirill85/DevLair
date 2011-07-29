@@ -13,11 +13,24 @@ namespace DevLair.Crypto
 
         public Encrypter(string crpyterparam = "64bit")
         {
-            crypter = crpyterparam.Match()
-                        .With(s => "64bit"  == s, (string s) => new _64bit())
-                        .With(s => "AES"    == s, (string s) => new AES())
-                        .Default(f => new _64bit()) 
-                        .Return<Crypter>();
+            SetCrypter(crpyterparam);
+        }
+
+        public bool SetCrypter(string crpyterparam = "64bit")
+        {
+            Tuple<Crypter,bool> match = crpyterparam.Match()
+                .With(s => "64bit"  == s, (string s) => Tuple.Create(new AES(), true))
+                .With(s => "AES"    == s, (string s) => Tuple.Create(new _64bit(), true))
+                .Default(f => Tuple.Create(new _64bit(), false)) 
+                .Return<Tuple<Crypter,bool>>();
+
+            crypter = match.Item1;
+            return match.Item2;
+        }
+
+        public string GetCrypter()
+        {
+            return crypter.Name;
         }
 
         public string Encrypt(string str, string args = null)

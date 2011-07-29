@@ -12,6 +12,11 @@ namespace DevLair.Crypto
     {
         private static byte[] _salt = Encoding.ASCII.GetBytes("o6806642kbM7c5");
 
+        public AES() 
+        {
+            name = "AES Encryption"; 
+        }
+
         public override string Encrypt(string str, string args)
         {
             if (string.IsNullOrEmpty(str))
