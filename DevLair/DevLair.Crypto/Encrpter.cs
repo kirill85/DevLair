@@ -25,11 +25,11 @@ namespace DevLair.Crypto
                         .Return<Crypter>();
         }
 
-        public string Encrypt(string str, string args)
+        public string Encrypt(string str, string args = null)
         {
             return crypter.Encrypt(str, args);
         }
-        public string Decrypt(string str, string args)
+        public string Decrypt(string str, string args = null)
         {
             return crypter.Decrypt(str, args);
         }
