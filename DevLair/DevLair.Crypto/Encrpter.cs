@@ -10,13 +10,8 @@ namespace DevLair.Crypto
     public class Encrypter
     {
         private Crypter crypter;
-        
-        public Encrypter()
-        {
-            crypter = new _64bit();
-        }
 
-        public Encrypter(string crpyterparam)
+        public Encrypter(string crpyterparam = "64bit")
         {
             crypter = crpyterparam.Match()
                         .With(s => "64bit"  == s, (string s) => new _64bit())
