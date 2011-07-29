@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.Data;
 using Npgsql;
+using DevLair.Crypto;
 
 namespace DevLair.Tests.DataBase
 {
@@ -12,12 +13,11 @@ namespace DevLair.Tests.DataBase
         [TestMethod]
         public void Connect()
         {
-
-            byte[] decbuff = Convert.FromBase64String("U2VydmVyPXBvc3RncmVzNDguMWdiLnJ1O1BvcnQ9NTQzMjtVc2VyIElkPXhnYl9kZXZsYWlyO1Bhc3N3b3JkPTZlNzhlNjU2O0RhdGFiYXNlPXhnYl9kZXZsYWlyO0NvbW1hbmRUaW1lb3V0PTEwMDs=");
+            Encrypter encrypter = new Encrypter("64bit");
+            String connection = encrypter.Decrypt("U2VydmVyPXBvc3RncmVzNDguMWdiLnJ1O1BvcnQ9NTQzMjtVc2VyIElkPXhnYl9kZXZsYWlyO1Bhc3N3b3JkPTZlNzhlNjU2O0RhdGFiYXNlPXhnYl9kZXZsYWlyO0NvbW1hbmRUaW1lb3V0PTEwMDs=");
 
             NpgsqlConnection conn = 
-                new NpgsqlConnection
-                    ( System.Text.Encoding.UTF8.GetString(decbuff) );
+                new NpgsqlConnection(connection);
 
             conn.Open();
             conn.Close();
