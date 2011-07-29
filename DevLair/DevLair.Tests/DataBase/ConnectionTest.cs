@@ -13,8 +13,12 @@ namespace DevLair.Tests.DataBase
         [TestMethod]
         public void Connect()
         {
-            Encrypter encrypter = new Encrypter("64bit");
-            String connection = encrypter.Decrypt("U2VydmVyPXBvc3RncmVzNDguMWdiLnJ1O1BvcnQ9NTQzMjtVc2VyIElkPXhnYl9kZXZsYWlyO1Bhc3N3b3JkPTZlNzhlNjU2O0RhdGFiYXNlPXhnYl9kZXZsYWlyO0NvbW1hbmRUaW1lb3V0PTEwMDs=");
+            Encrypter _64encrypter = new Encrypter("64bit");
+            String keyword = _64encrypter.Decrypt("QnV0IHlvdSBkb24ndCByZWFsbHkgbWVhbiBpdA==");
+
+            Encrypter AESencrypter = new Encrypter("AES");
+            String connection = AESencrypter.Decrypt
+                ("Sf+ulELX4tNuvsQtUG2EZWPJDPhm8obnrSyEm7F5mtg/eziYSjoIZndeCHk8iZOhvAuMNJBxiiatrRHTt2LVFv/vJNoo8yCHkOO7TwUWv3+l8+Wpis4TSsEvc8zHgEPIucH/OQ2tyYlMboyoFH26dZLZ2Y+Kevfu79VfqLBcKGE=", keyword);
 
             NpgsqlConnection conn = 
                 new NpgsqlConnection(connection);
