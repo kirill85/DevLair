@@ -34,6 +34,9 @@
     <Reference Include="Mono.Security">
       <HintPath>..\..\Libs\Mono.Security.dll</HintPath>
     </Reference>
+    <Reference Include="nCrypto">
+      <HintPath>..\..\Libs\nCrypto.dll</HintPath>
+    </Reference>
     <Reference Include="Npgsql">
       <HintPath>..\..\Libs\Npgsql.dll</HintPath>
     </Reference>
@@ -51,12 +54,6 @@
     <Compile Include="Npgsql\DLExecute.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\nCrypto\nCrypto.csproj">
-      <Project>{9B45F3AA-7875-444E-B9EB-D1934F9A5777}</Project>
-      <Name>nCrypto</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
