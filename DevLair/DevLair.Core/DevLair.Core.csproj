@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FD9F7D6B-7C1A-43C0-9816-30B7CFB08387}</ProjectGuid>
+    <ProjectGuid>{FF3DD441-09A5-498F-8029-6AC365CE067E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DevLair.Core</RootNamespace>
