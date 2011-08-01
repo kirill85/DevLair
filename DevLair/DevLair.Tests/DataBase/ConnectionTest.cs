@@ -23,11 +23,13 @@ namespace DevLair.Tests.DataBase
             String connection = encrypter.Decrypt
                 ("Sf+ulELX4tNuvsQtUG2EZWPJDPhm8obnrSyEm7F5mtg/eziYSjoIZndeCHk8iZOhvAuMNJBxiiatrRHTt2LVFv/vJNoo8yCHkOO7TwUWv3+l8+Wpis4TSsEvc8zHgEPIucH/OQ2tyYlMboyoFH26dZLZ2Y+Kevfu79VfqLBcKGE=", keyword);
 
+            /*
             NpgsqlConnection conn = 
                 new NpgsqlConnection(connection);
 
             conn.Open();
             conn.Close();
+             */ 
         }
     }
 }
