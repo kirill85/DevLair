@@ -1,23 +1,27 @@
 ﻿CREATE TABLE Contacts
 (
-	email                varchar(50) NOT NULL,
-	passwd            text NOT NULL,
 	visibleEmail         text NULL,
-	JID                  text NULL,
-	ICQ                  text NULL,
-	MSN 		     text null
+	JID                  VARCHAR(20) NULL,
+	ICQ                  VARCHAR(20) NULL,
+	userId               serial NOT NULL,
+	MSN                  VARCHAR(20) NULL
 );
 
-alter table Contacts
-add primary key(gUserId, email, passwd);
+ALTER TABLE Contacts
+ADD PRIMARY KEY (userId);
 
-CREATE TABLE Users (gUserId serial not null,  Nick text not null, 
-email text not null, passwd text not null,
-photo bytea null);
+CREATE TABLE Users
+(
+	nick                 text NULL,
+	email                text NULL,
+	passwd             text not NULL,
+	photo                bytea NULL,
+	userId               serial NOT NULL
+);
 
-alter table Users
-add primary key(gUserId, email, passwd);
+ALTER TABLE Users
+ADD PRIMARY KEY (userId);
 
-alter table Contacts
-add constraint Users_Contacts foreign key(gUserId, email, passwd)
-references Users(gUserId, email, passwd);
+ALTER TABLE Contacts
+ADD CONSTRAINT Contacts_Users FOREIGN KEY (userId) REFERENCES Users (userId);
+
