@@ -7,9 +7,9 @@ using Npgsql;
 
 namespace DevLair.ORM.Npgsql
 {
-    static class DLExecute
+    public static class DLExecute
     {
-        bool Execute(string sql)
+        public static bool ExecSQL(string sql)
         {
             NpgsqlCommand command = new NpgsqlCommand(sql, DLConnection.conn);
             Int32 rowsaffected;
