@@ -13,12 +13,12 @@ namespace DevLair.ORM.Model.Tables
     public class Users
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.OnInsert)]
-        public int clientId { get; set; }
+        public int ClientId { get; set; }
         [Column(Name = "nick")]
         public string NickName { get; set; }
         [Column(Name = "passwd", CanBeNull = false)]
         public string Password { get; set; }
-        [Column(Name = "email")]
+        [Column(Name = "email", CanBeNull = false)]
         public string MailTo { get; set; }
         [Column(Name = "photo")]
         public byte[] UserPhoto { get; set; }
