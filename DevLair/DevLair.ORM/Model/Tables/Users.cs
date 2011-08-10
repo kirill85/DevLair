@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
-using NpgsqlTypes;
-using Npgsql;
+using DevLair.ORM.Npgsql;
 
 namespace DevLair.ORM.Model.Tables
 {
@@ -22,5 +21,9 @@ namespace DevLair.ORM.Model.Tables
         public string MailTo { get; set; }
         [Column(Name = "photo")]
         public byte[] UserPhoto { get; set; }
+
+        #region ModifyUsers
+
+        #endregion
     }
 }

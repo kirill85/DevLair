@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="DevLair.ORM" assembly="DevLair.ORM">
+	<class name="Users" table="users">
+		<id name="ClientId" unsaved-value="0">
+			<column name="ClientId" not-null="true" />
+			<generator class="identity" />
+		</id>
+		<property name="MailTo" />
+		<property name="NickName" />
+		<property name="Password" />
+		<property name="UserPhoto" />
+	</class>
+</hibernate-mapping>
