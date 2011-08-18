@@ -4,12 +4,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data;
 using Npgsql;
 using nCrypto;
+using NHibernate.Cfg;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 
 namespace DevLair.Tests.DataBase
 {
     [TestClass]
     public class ConnectionTest
     {
+        private Configuration config;
         [TestMethod]
         public void Connect()
         {
@@ -23,13 +27,8 @@ namespace DevLair.Tests.DataBase
             String connection = encrypter.Decrypt
                 ("Sf+ulELX4tNuvsQtUG2EZWPJDPhm8obnrSyEm7F5mtg/eziYSjoIZndeCHk8iZOhvAuMNJBxiiatrRHTt2LVFv/vJNoo8yCHkOO7TwUWv3+l8+Wpis4TSsEvc8zHgEPIucH/OQ2tyYlMboyoFH26dZLZ2Y+Kevfu79VfqLBcKGE=", keyword);
 
-            /*
-            NpgsqlConnection conn = 
-                new NpgsqlConnection(connection);
-
-            conn.Open();
-            conn.Close();
-             */ 
+            config = Fluently.Configure().Database(PostgreSQLConfiguration.Standard.ConnectionString(connection)).BuildSessionFactory();
+            Assert.IsNotNull(config);
         }
     }
 }

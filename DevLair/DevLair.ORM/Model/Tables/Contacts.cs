@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Linq.Mapping;
 
-namespace DevLair.ORM.Model.Tables
+namespace DevLair.ORM.Model.TablesMap
 {
-    [Association(IsForeignKey = true)]
-    [Table(Name = "contacts")]
-    public class Contacts
+    public class Contacts : EntityBase
     {
-
+        public virtual string Icq { get; set; }
+        public virtual string Jid { get; set; }
+        public virtual string VisibleMail { get; set; }
+        public virtual string Msn { get; set; }
     }
 }
