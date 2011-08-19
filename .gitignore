@@ -1,5 +1,6 @@
 *.suo
 *.vs10x
+*.pdb
 /DevLair/DevLair/bin
 /DevLair/DevLair/obj
 /DevLair/DevLair.Tests/obj
