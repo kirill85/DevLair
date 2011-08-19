@@ -1,13 +1,16 @@
 *.suo
 *.vs10x
 *.pdb
+
 /DevLair/DevLair/bin
 /DevLair/DevLair/obj
 /DevLair/DevLair.Tests/obj
 /DevLair/DevLair.Tests/bin
 /DevLair/DevLair.ORM/bin
 /DevLair/DevLair.ORM/obj
+
 /DevLair/TestResults
+
 /DevLair/DevLair/App_Data
 /DevLair/DevLair.Crypto/bin
 /DevLair/DevLair.Crypto/obj
