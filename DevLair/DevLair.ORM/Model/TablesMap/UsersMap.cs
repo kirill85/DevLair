@@ -10,12 +10,12 @@ namespace DevLair.ORM.Model.TablesMap
     {
         public UsersMap()
         {
-            Id(x => x.UID).GeneratedBy.Guid();
+            Id(x => x.UID).GeneratedBy.Native();
             Map(x => x.NickName).Not.Nullable();
             Map(x => x.Password).Not.Nullable();
             Map(x => x.MailTo).Not.Nullable();
             Map(x => x.UserPhoto);
-            References(x => x.Contacts).Cascade.Delete().Cascade.SaveUpdate();
+            References<Contacts>(x => x.Contact).Cascade.Delete().Cascade.SaveUpdate().Not.Nullable();
         }
     }
 }

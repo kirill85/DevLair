@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DevLair.ORM.Model.TablesMap
 {
     public class Users : EntityBase
     {
-        public virtual int UserId { get; set; }
+        public virtual int UserId { get; protected set; }
        
         public virtual string NickName { get; set; }
         
@@ -17,7 +15,7 @@ namespace DevLair.ORM.Model.TablesMap
         
         public virtual byte[] UserPhoto { get; set; }
 
-        public virtual Contacts Contacts { get; set; }
+        public virtual Contacts Contact { get; set; }
 
         #region ModifyUsers
 
