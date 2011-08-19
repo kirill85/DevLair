@@ -46,8 +46,11 @@
       <HintPath>..\..\Libs\nCrypto.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=3.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\..\Libs\NHibernate.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Fluent NHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\Libs\Fluent NHibernate\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql">
       <HintPath>..\..\Libs\Npgsql.dll</HintPath>
