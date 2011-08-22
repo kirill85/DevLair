@@ -5,12 +5,7 @@ namespace DevLair.ORM.Model.TablesMap
 {
     public class Contacts : EntityBase
     {
-        public Contacts()
-        {
-            Users = new List<Users>();
-        }
-
-        public virtual int ContactId { get; protected set; }
+        public virtual int ContactId { get; private set; }
         
         public virtual string Icq { get; set; }
         
@@ -20,6 +15,6 @@ namespace DevLair.ORM.Model.TablesMap
         
         public virtual string Msn { get; set; }
 
-        public IList<Users> Users { get; protected set; }
+        public Users Users { get; private set; }
     }
 }

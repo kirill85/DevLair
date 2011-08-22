@@ -5,7 +5,11 @@ namespace DevLair.ORM.Model.TablesMap
 {
     public class Users : EntityBase
     {
-        public virtual int UserId { get; protected set; }
+        public Users()
+        {
+            Contacts = new List<Contacts>();
+        }
+        public virtual int UserId { get; private set; }
        
         public virtual string NickName { get; set; }
         
@@ -15,7 +19,7 @@ namespace DevLair.ORM.Model.TablesMap
         
         public virtual byte[] UserPhoto { get; set; }
 
-        public virtual Contacts Contact { get; set; }
+        public virtual IList<Contacts> Contacts { get; set; }
 
         #region ModifyUsers
 
