@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.Data;
 using Npgsql;
+using NHibernate;
 using nCrypto;
 using NHibernate.Cfg;
 using FluentNHibernate.Cfg;
@@ -14,6 +15,20 @@ namespace DevLair.Tests.DataBase
     public class ConnectionTest
     {
         private String connection = null;
+
+        public ConnectionTest()
+        {
+        }
+
+        public String ConnectionString //modified by Shkrogalev
+        {
+            get
+            {
+                if (connection != null)
+                    return connection;
+                else return null;
+            }
+        }
 
         [TestMethod]
         [TestInitialize]
@@ -35,8 +50,8 @@ namespace DevLair.Tests.DataBase
         {
             Assert.IsNotNull(this.connection);
 
-            NHibernate.ISessionFactory session =
-                    Fluently.Configure().Database(PostgreSQLConfiguration.Standard.ConnectionString(this.connection)).BuildSessionFactory();
+            ISessionFactory session = 
+               Fluently.Configure().Database(PostgreSQLConfiguration.Standard.ConnectionString(this.connection)).BuildSessionFactory();
 
             Assert.IsNotNull(session);
         }
