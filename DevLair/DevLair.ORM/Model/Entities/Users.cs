@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DevLair.ORM.Model.TablesMap
+namespace DevLair.ORM.Model.Entities
 {
-    public class Users : EntityBase
+    public class Users
     {
         public Users()
         {

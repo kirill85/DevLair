@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DevLair.ORM.Model.TablesMap
+namespace DevLair.ORM.Model.Entities
 {
-    public class Contacts : EntityBase
+    public class Contacts
     {
         public virtual int ContactId { get; private set; }
         

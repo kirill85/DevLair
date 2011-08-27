@@ -16,20 +16,6 @@ namespace DevLair.Tests.DataBase
     {
         private String connection = null;
 
-        public ConnectionTest()
-        {
-        }
-
-        public String ConnectionString //modified by Shkrogalev
-        {
-            get
-            {
-                if (connection != null)
-                    return connection;
-                else return null;
-            }
-        }
-
         [TestMethod]
         [TestInitialize]
         public void Connect()

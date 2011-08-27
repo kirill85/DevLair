@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DevLair.ORM.Model.Tables
+namespace DevLair.ORM.Model.Entities
 {
     public class PrivateMessage
     {

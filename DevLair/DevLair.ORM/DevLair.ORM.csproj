@@ -60,19 +60,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityBase.cs" />
     <Compile Include="Model\Config\DatabaseConfiguration.cs" />
     <Compile Include="Model\TablesMap\ContactsMap.cs" />
     <Compile Include="Model\TablesMap\PrivateMessageMap.cs" />
-    <Compile Include="Model\Tables\Contacts.cs" />
-    <Compile Include="Model\Tables\PrivateMessage.cs" />
-    <Compile Include="Model\Tables\Users.cs" />
+    <Compile Include="Model\Entities\Contacts.cs" />
+    <Compile Include="Model\Entities\PrivateMessage.cs" />
+    <Compile Include="Model\Entities\Users.cs" />
     <Compile Include="Model\TablesMap\UsersMap.cs" />
     <Compile Include="Npgsql\DLConnection.cs" />
     <Compile Include="Npgsql\DLExecute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Automapping\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
