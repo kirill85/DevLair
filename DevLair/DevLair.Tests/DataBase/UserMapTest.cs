@@ -1,9 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DevLair.ORM.Model.Config;
-using FluentNHibernate.Testing;
-using DevLair.ORM.Model.Entities;
+
 using NHibernate;
+using FluentNHibernate.Testing;
+using FluentNHibernate.Mapping;
+
+using DevLair.ORM.Model.Config;
+using DevLair.ORM.Model.Entities;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 //using NUnit.Framework;
 
 namespace DevLair.Tests.DataBase
