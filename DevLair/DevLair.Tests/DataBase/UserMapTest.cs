@@ -4,14 +4,13 @@ using DevLair.ORM.Model.Config;
 using FluentNHibernate.Testing;
 using DevLair.ORM.Model.Entities;
 using NHibernate;
+//using NUnit.Framework;
 
 namespace DevLair.Tests.DataBase
 {
     [TestClass]
     public class UserMapTest
     {
-        private Users usersSpec;
-
         [TestMethod]
         [TestInitialize]
         public void UserMapTestInitialize()
@@ -32,15 +31,10 @@ namespace DevLair.Tests.DataBase
         public void testUserSchema()
         {
             Assert.IsNotNull(testConfig.Session);
-            try
-            {
-                usersSpec = new PersistenceSpecification<Users>(testConfig.Session).CheckProperty(ch => ch.UserId, 0).CheckProperty(ch => ch.NickName, "JonhDoe").CheckProperty(ch => ch.Password, "Doe").CheckProperty(ch => ch.MailTo, "jonh@doe.usr").CheckProperty(ch => ch.UserPhoto, null).CheckProperty(ch => ch.Contacts, null).VerifyTheMappings();
-                Assert.IsNotNull(usersSpec);
-            }
-            catch (MappingException exc)
-            {
-                Console.WriteLine(exc.Source);
-            }
+
+            var spec = new PersistenceSpecification<Users>(testConfig.Session).CheckProperty(ch => ch.UserId, 1).CheckProperty(ch => ch.NickName, "JonhDoe").CheckProperty(ch => ch.Password, "secret").CheckProperty(ch => ch.MailTo, "jonh@doe.usr").CheckProperty(ch => ch.UserPhoto, null).VerifyTheMappings();
+
+            Assert.IsNotNull(spec);
         }
     }
 }
