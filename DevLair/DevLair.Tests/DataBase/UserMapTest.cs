@@ -43,6 +43,7 @@ namespace DevLair.Tests.DataBase
         public void testUserSchema()
         {
             Assert.IsNotNull(testConfig.FluentCfg.BuildSessionFactory());
+            Users userFoo = new Users();
             var spec = new PersistenceSpecification<Users>
                 (session.OpenSession()).CheckProperty(ch => ch.UserId, 1)
                     .CheckProperty(ch => ch.NickName, "JonhDoe")
