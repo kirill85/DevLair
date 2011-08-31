@@ -15,17 +15,24 @@ namespace DevLair.ORM.Model.Config
     {
         private string connectionString = "";
         private ISessionFactory session = null;
-        private Configuration config = null;
+        //private ISessionFactory config = null;
         private FluentConfiguration fluentCfg = null;
 
-        public ISessionFactory Session
+        public FluentConfiguration FluentCfg
+        {
+            get
+            {
+                return fluentCfg;
+            }
+        }
+        /*public ISessionFactory Session
         {
             get
             {
                 session = fluentCfg.BuildSessionFactory();
                 return session;
             }
-        }
+        }*/
 
         public DatabaseConfiguration()
         {
@@ -38,7 +45,7 @@ namespace DevLair.ORM.Model.Config
                 m.HbmMappings.AddFromAssemblyOf<Users>();
                 m.HbmMappings.AddFromAssemblyOf<Contacts>();
             });
-            config = fluentCfg.BuildConfiguration();
+            var config = fluentCfg.BuildSessionFactory();
         }
     }
 }
