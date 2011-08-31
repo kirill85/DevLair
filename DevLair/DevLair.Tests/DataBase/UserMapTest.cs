@@ -4,6 +4,7 @@ using DevLair.ORM.Model.Config;
 using FluentNHibernate.Testing;
 using DevLair.ORM.Model.Entities;
 using NHibernate;
+using FluentNHibernate;
 //using NUnit.Framework;
 
 namespace DevLair.Tests.DataBase
@@ -32,7 +33,7 @@ namespace DevLair.Tests.DataBase
         {
             Assert.IsNotNull(testConfig.Session);
 
-            var spec = new PersistenceSpecification<Users>(testConfig.Session).CheckProperty(ch => ch.UserId, 1).CheckProperty(ch => ch.NickName, "JonhDoe").CheckProperty(ch => ch.Password, "secret").CheckProperty(ch => ch.MailTo, "jonh@doe.usr").CheckProperty(ch => ch.UserPhoto, null).VerifyTheMappings();
+            var spec = new PersistenceSpecification<Users>((ISessionSource)testConfig.Session).CheckProperty(ch => ch.UserId, 1).CheckProperty(ch => ch.NickName, "JonhDoe").CheckProperty(ch => ch.Password, "secret").CheckProperty(ch => ch.MailTo, "jonh@doe.usr").CheckProperty(ch => ch.UserPhoto, null).VerifyTheMappings();
 
             Assert.IsNotNull(spec);
         }

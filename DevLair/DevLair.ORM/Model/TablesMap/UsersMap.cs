@@ -10,12 +10,12 @@ namespace DevLair.ORM.Model.Entities
     {
         public UsersMap()
         {
-            Id(x => x.UserId).Column("userid").GeneratedBy.Sequence("users_userid_seq");
+            Id(x => x.UserId).Column("userid").CustomSqlType("Serial").GeneratedBy.Native();
             Map(x => x.NickName).Column("nickname").Not.Nullable();
             Map(x => x.Password).Column("passwd").Not.Nullable();
             Map(x => x.MailTo).Column("email").Not.Nullable();
             Map(x => x.UserPhoto).Column("userphoto");
-            HasMany(x => x.Contacts).Cascade.Delete();
+            HasMany(x => x.Contacts).Cascade.Delete().Table("users");
   //          References<Contacts>(x => x.Contacts).Cascade.Delete().Cascade.SaveUpdate().Not.Nullable();
         }
     }
